@@ -30,7 +30,7 @@ const initial: FormState = {
 };
 
 const fieldClass =
-  "w-full rounded-[9px] border border-border bg-surface px-4 py-3 text-sm text-ink outline-none transition-colors placeholder:text-muted/70 focus:border-ink/40";
+  "w-full max-w-full rounded-[9px] border border-border bg-surface px-3.5 py-3 text-base text-ink outline-none transition-colors placeholder:text-muted/70 focus:border-ink/40 sm:px-4 sm:text-sm";
 
 export function ReferralForm() {
   const [values, setValues] = useState<FormState>(initial);
@@ -65,7 +65,7 @@ export function ReferralForm() {
   if (success) {
     return (
       <div
-        className="border border-border bg-surface p-8 md:p-10"
+        className="border border-border bg-surface p-5 sm:p-8 md:p-10"
         role="status"
         aria-live="polite"
       >
@@ -86,7 +86,7 @@ export function ReferralForm() {
     <form
       onSubmit={onSubmit}
       noValidate
-      className="border border-border bg-surface p-6 md:p-8"
+      className="border border-border bg-surface p-4 sm:p-6 md:p-8"
     >
       <div className="mb-6 border-b border-border pb-5">
         <h2 className="text-xl font-semibold tracking-[-0.02em] text-ink">

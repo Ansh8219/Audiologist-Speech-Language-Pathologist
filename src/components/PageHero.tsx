@@ -24,22 +24,22 @@ export function PageHero({
   return (
     <section
       className={cn(
-        "border-b border-border/70 bg-background pt-28 pb-16 md:pt-32 md:pb-20",
+        "border-b border-border/70 bg-background pt-24 pb-12 sm:pt-28 sm:pb-16 md:pt-32 md:pb-20",
         className,
       )}
     >
       <div className="container-editorial">
-        <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
-          <div className="lg:col-span-8">
+        <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
+          <div className="min-w-0 lg:col-span-8">
             <SectionHeading
               eyebrow={eyebrow}
               title={title}
               description={description}
               as="h1"
-              titleClassName="text-4xl md:text-5xl lg:text-[3.25rem]"
+              titleClassName="text-[1.85rem] leading-[1.15] sm:text-4xl md:text-5xl lg:text-[3.25rem]"
             />
             {(primaryCta || secondaryCta) && (
-              <div className="mt-8 flex flex-wrap items-center gap-3">
+              <div className="btn-row mt-7 sm:mt-8">
                 {primaryCta && (
                   <Button href={primaryCta.href} size="lg">
                     {primaryCta.label}
@@ -53,7 +53,9 @@ export function PageHero({
               </div>
             )}
           </div>
-          {children && <div className="lg:col-span-4">{children}</div>}
+          {children && (
+            <div className="min-w-0 lg:col-span-4">{children}</div>
+          )}
         </div>
       </div>
     </section>

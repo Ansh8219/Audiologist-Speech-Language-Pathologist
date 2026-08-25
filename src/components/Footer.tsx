@@ -20,7 +20,7 @@ function FooterLink({ href, label }: { href: string; label: string }) {
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-ink text-white">
+    <footer className="relative overflow-hidden bg-ink pb-[calc(var(--mobile-cta-h)+1rem+env(safe-area-inset-bottom,0px))] text-white lg:pb-0">
       <div
         className="pointer-events-none absolute inset-0 opacity-40"
         style={{

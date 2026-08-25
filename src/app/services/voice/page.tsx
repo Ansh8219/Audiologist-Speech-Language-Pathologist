@@ -35,7 +35,7 @@ export default function VoicePage() {
 
           <div className="grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-5">
-              <p className="text-5xl font-semibold tracking-[-0.05em] text-ink md:text-6xl lg:text-7xl">
+              <p className="text-4xl font-semibold tracking-[-0.05em] text-ink sm:text-5xl md:text-6xl lg:text-7xl">
                 Voice
               </p>
               <p className="mt-6 max-w-md text-base leading-relaxed text-ink-soft">

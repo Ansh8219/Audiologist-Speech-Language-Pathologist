@@ -21,11 +21,11 @@ type ImagePlaceholderProps = {
 };
 
 const variantStyles: Record<PlaceholderVariant, string> = {
-  hero: "aspect-[4/5] min-h-[420px] md:min-h-[540px]",
-  portrait: "aspect-[3/4] min-h-[360px]",
-  clinical: "aspect-[4/5] min-h-[380px]",
-  editorial: "aspect-[5/6] min-h-[400px]",
-  landscape: "aspect-[16/10] min-h-[240px]",
+  hero: "aspect-[4/5] min-h-[280px] sm:min-h-[360px] md:min-h-[520px]",
+  portrait: "aspect-[3/4] min-h-[260px] sm:min-h-[320px] md:min-h-[360px]",
+  clinical: "aspect-[4/5] min-h-[260px] sm:min-h-[320px] md:min-h-[380px]",
+  editorial: "aspect-[5/6] min-h-[280px] sm:min-h-[340px] md:min-h-[400px]",
+  landscape: "aspect-[16/10] min-h-[180px] sm:min-h-[220px] md:min-h-[240px]",
 };
 
 export function ImagePlaceholder({
@@ -121,10 +121,10 @@ export function ImagePlaceholder({
                 : "bg-gradient-to-t from-[#EBE6DC]/85 to-transparent",
             )}
           />
-          <figcaption className="absolute inset-x-0 bottom-0 p-6 md:p-8">
+          <figcaption className="absolute inset-x-0 bottom-0 p-4 sm:p-6 md:p-8">
             <div
               className={cn(
-                "max-w-[16rem] border-t pt-4",
+                "max-w-[16rem] border-t pt-3 sm:pt-4",
                 hasImage ? "border-white/25" : "border-ink/12",
               )}
             >

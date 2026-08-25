@@ -32,7 +32,7 @@ export function SectionHeading({
       {eyebrow && <p className="eyebrow mb-4">{eyebrow}</p>}
       <Tag
         className={cn(
-          "text-balance text-3xl font-semibold tracking-[-0.03em] text-ink md:text-4xl lg:text-[2.75rem] lg:leading-[1.15]",
+          "text-balance text-[1.65rem] font-semibold tracking-[-0.03em] leading-[1.15] text-ink sm:text-3xl md:text-4xl lg:text-[2.75rem] lg:leading-[1.15]",
           titleClassName,
         )}
       >

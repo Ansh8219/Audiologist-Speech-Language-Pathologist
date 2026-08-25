@@ -42,7 +42,7 @@ export function CTASection({
                 {eyebrow}
               </p>
             )}
-            <h2 className="text-balance text-3xl font-semibold tracking-[-0.03em] md:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
+            <h2 className="text-balance text-[1.75rem] font-semibold tracking-[-0.03em] leading-[1.15] sm:text-3xl md:text-4xl lg:text-[2.75rem]">
               {title}
             </h2>
             {description && (
@@ -51,7 +51,7 @@ export function CTASection({
               </p>
             )}
           </div>
-          <div className="flex flex-wrap gap-3 lg:col-span-5 lg:justify-end">
+          <div className="btn-row lg:col-span-5 lg:justify-end">
             <Button href={primaryCta.href} size="lg" variant="inverse">
               {primaryCta.label}
             </Button>

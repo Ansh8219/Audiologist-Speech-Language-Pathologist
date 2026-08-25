@@ -46,7 +46,7 @@ function validate(values: FormState): FormErrors {
 }
 
 const fieldClass =
-  "w-full rounded-[9px] border border-border bg-surface px-4 py-3 text-sm text-ink outline-none transition-colors placeholder:text-muted/70 focus:border-ink/40";
+  "w-full max-w-full rounded-[9px] border border-border bg-surface px-3.5 py-3 text-base text-ink outline-none transition-colors placeholder:text-muted/70 focus:border-ink/40 sm:px-4 sm:text-sm";
 
 const labelClass = "mb-1.5 block text-sm font-medium text-ink";
 
@@ -76,7 +76,7 @@ export function AppointmentForm() {
   if (success) {
     return (
       <div
-        className="border border-border bg-surface p-8 md:p-10"
+        className="border border-border bg-surface p-5 sm:p-8 md:p-10"
         role="status"
         aria-live="polite"
       >
@@ -107,7 +107,7 @@ export function AppointmentForm() {
     <form
       onSubmit={onSubmit}
       noValidate
-      className="border border-border bg-surface p-6 md:p-8"
+      className="border border-border bg-surface p-4 sm:p-6 md:p-8"
     >
       <div className="grid gap-5 sm:grid-cols-2">
         <Field

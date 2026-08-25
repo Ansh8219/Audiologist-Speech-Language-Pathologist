@@ -89,28 +89,29 @@ export default function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="overflow-hidden pt-28 md:pt-32">
+      <section className="overflow-x-clip pt-24 sm:pt-28 md:pt-32">
         <div className="container-editorial">
-          <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-10">
-            <div className="lg:col-span-7">
+          <div className="grid items-center gap-8 sm:gap-10 lg:grid-cols-12 lg:gap-10">
+            <div className="min-w-0 lg:col-span-7">
               <p className="eyebrow animate-fade-up">
                 Specialized Adult Rehabilitation
               </p>
-              <h1 className="animate-fade-up-delay-1 mt-5 text-balance text-4xl font-semibold tracking-[-0.035em] text-ink sm:text-5xl lg:text-[3.5rem] lg:leading-[1.08]">
+              <h1 className="animate-fade-up-delay-1 mt-4 text-balance text-[1.85rem] font-semibold leading-[1.12] tracking-[-0.035em] text-ink sm:mt-5 sm:text-5xl lg:text-[3.5rem] lg:leading-[1.08]">
                 Helping Adults
-                <br />
+                <br className="hidden min-[380px]:block" />
+                <span className="min-[380px]:hidden"> </span>
                 Communicate Better.
                 <br />
                 Swallow Safely.
                 <br />
                 Live Independently.
               </h1>
-              <p className="animate-fade-up-delay-2 mt-6 max-w-xl text-base leading-relaxed text-ink-soft md:text-lg">
+              <p className="animate-fade-up-delay-2 mt-5 max-w-xl text-[0.95rem] leading-relaxed text-ink-soft sm:mt-6 sm:text-base md:text-lg">
                 Assessment and rehabilitation for speech, language, voice,
                 cognitive-communication and swallowing disorders, with a
                 specialized focus on neurological conditions.
               </p>
-              <div className="animate-fade-up-delay-3 mt-8 flex flex-wrap gap-3">
+              <div className="animate-fade-up-delay-3 btn-row mt-7 sm:mt-8">
                 <Button href="/book-appointment" size="lg">
                   Book an Appointment
                 </Button>
@@ -118,28 +119,20 @@ export default function HomePage() {
                   Refer a Patient
                 </Button>
               </div>
-              <p className="animate-fade-up-delay-3 mt-8 text-sm tracking-wide text-muted">
-                Adults
-                <span className="mx-2 text-border" aria-hidden>
-                  •
-                </span>
-                Neurological Conditions
-                <span className="mx-2 text-border" aria-hidden>
-                  •
-                </span>
-                Speech
-                <span className="mx-2 text-border" aria-hidden>
-                  •
-                </span>
-                Voice
-                <span className="mx-2 text-border" aria-hidden>
-                  •
-                </span>
-                Swallowing
-              </p>
+              <div className="animate-fade-up-delay-3 trust-line mt-7 sm:mt-8">
+                <span>Adults</span>
+                <span aria-hidden>•</span>
+                <span>Neurological Conditions</span>
+                <span aria-hidden>•</span>
+                <span>Speech</span>
+                <span aria-hidden>•</span>
+                <span>Voice</span>
+                <span aria-hidden>•</span>
+                <span>Swallowing</span>
+              </div>
             </div>
 
-            <div className="animate-fade-up-delay-2 lg:col-span-5">
+            <div className="animate-fade-up-delay-2 min-w-0 lg:col-span-5">
               <div className="frame-editorial relative z-[1]">
                 <ImagePlaceholder
                   variant="hero"
@@ -376,7 +369,7 @@ export default function HomePage() {
             <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
               <div className="lg:col-span-5">
                 <p className="eyebrow">Voice</p>
-                <h2 className="mt-4 text-balance text-4xl font-semibold tracking-[-0.04em] text-ink md:text-5xl lg:text-[3.25rem] lg:leading-[1.05]">
+                <h2 className="mt-4 text-balance text-[1.85rem] font-semibold tracking-[-0.04em] text-ink sm:text-4xl md:text-5xl lg:text-[3.25rem] lg:leading-[1.05]">
                   Voice Rehabilitation
                 </h2>
                 <p className="mt-5 max-w-md text-base leading-relaxed text-ink-soft">

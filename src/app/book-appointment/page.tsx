@@ -29,15 +29,15 @@ export default function BookAppointmentPage() {
             ]}
           />
 
-          <div className="mx-auto grid max-w-5xl gap-10 lg:grid-cols-12">
-            <div className="lg:col-span-4">
+          <div className="mx-auto grid max-w-5xl gap-8 lg:grid-cols-12 lg:gap-10">
+            <div className="order-2 min-w-0 lg:order-1 lg:col-span-4">
               <ImagePlaceholder
                 variant="portrait"
                 src="/Atmosphere2.jpg"
                 alt="Welcoming consultation room"
                 label="Next Step"
                 sublabel="Request an appointment"
-                className="min-h-[320px]"
+                className="min-h-[240px] sm:min-h-[320px]"
                 objectPosition="center"
               />
               <p className="mt-5 text-sm leading-relaxed text-ink-soft">
@@ -45,7 +45,7 @@ export default function BookAppointmentPage() {
                 each enquiry and contact you with the next step.
               </p>
             </div>
-            <div className="lg:col-span-8">
+            <div className="order-1 min-w-0 lg:order-2 lg:col-span-8">
               <AppointmentForm />
               <p className="mt-6 text-sm text-muted">
                 Prefer to speak first? Visit{" "}

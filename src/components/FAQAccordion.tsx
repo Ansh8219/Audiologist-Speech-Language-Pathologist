@@ -33,15 +33,15 @@ export function FAQAccordion({ items, className }: FAQAccordionProps) {
                 type="button"
                 aria-expanded={isOpen}
                 aria-controls={panelId}
-                className="flex w-full items-center justify-between gap-6 py-5 text-left transition-colors duration-300 hover:text-ink-soft"
+                className="flex w-full items-start justify-between gap-3 py-4 text-left transition-colors duration-300 hover:text-ink-soft sm:items-center sm:gap-6 sm:py-5"
                 onClick={() => setOpenIndex(isOpen ? null : index)}
               >
-                <span className="text-base font-medium tracking-[-0.01em] text-ink md:text-lg">
+                <span className="min-w-0 text-[0.95rem] font-medium tracking-[-0.01em] text-ink sm:text-base md:text-lg">
                   {item.question}
                 </span>
                 <ChevronDown
                   className={cn(
-                    "size-5 shrink-0 text-muted transition-transform duration-300 ease-out",
+                    "mt-0.5 size-5 shrink-0 text-muted transition-transform duration-300 ease-out sm:mt-0",
                     isOpen && "rotate-180",
                   )}
                   aria-hidden

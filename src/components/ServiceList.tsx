@@ -20,12 +20,12 @@ export function ServiceList({ items, className }: ServiceListProps) {
         const row = (
           <span
             className={cn(
-              "group flex items-center justify-between gap-4 bg-background/90 px-5 py-4",
+              "group flex items-center justify-between gap-3 bg-background/90 px-4 py-3.5 sm:gap-4 sm:px-5 sm:py-4",
               "transition-colors duration-200 ease-[cubic-bezier(0.22,1,0.36,1)]",
               item.href && "hover:bg-surface",
               item.featured
-                ? "text-lg font-semibold text-ink md:text-xl"
-                : "text-base text-ink-soft group-hover:text-ink",
+                ? "text-base font-semibold text-ink sm:text-lg md:text-xl"
+                : "text-[0.95rem] text-ink-soft group-hover:text-ink sm:text-base",
             )}
           >
             {item.label}

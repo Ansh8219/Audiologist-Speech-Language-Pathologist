@@ -44,9 +44,9 @@ export function Header() {
             : "border-b border-transparent bg-transparent",
         )}
       >
-        <div className="container-editorial flex h-[72px] items-center justify-between gap-6">
-          <Link href="/" className="min-w-0 shrink group">
-            <span className="block truncate text-[0.95rem] font-semibold tracking-[-0.02em] text-ink transition-colors group-hover:text-ink-soft md:text-base">
+        <div className="container-editorial flex h-16 items-center justify-between gap-3 sm:h-[72px] sm:gap-6">
+          <Link href="/" className="group min-w-0 shrink">
+            <span className="block truncate text-[0.9rem] font-semibold tracking-[-0.02em] text-ink transition-colors group-hover:text-ink-soft sm:text-[0.95rem] md:text-base">
               {SITE.name}
             </span>
             <span className="mt-0.5 hidden truncate text-[0.7rem] tracking-[0.02em] text-muted sm:block">
@@ -108,7 +108,7 @@ export function Header() {
             </Button>
             <button
               type="button"
-              className="inline-flex size-11 items-center justify-center rounded-[9px] border border-border bg-surface text-ink xl:hidden"
+              className="inline-flex size-10 shrink-0 items-center justify-center rounded-[9px] border border-border bg-surface text-ink sm:size-11 xl:hidden"
               aria-expanded={open}
               aria-controls="mobile-navigation"
               aria-label={open ? "Close menu" : "Open menu"}

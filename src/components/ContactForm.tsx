@@ -22,7 +22,7 @@ const initial: FormState = {
 };
 
 const fieldClass =
-  "w-full rounded-[9px] border border-border bg-surface px-4 py-3 text-sm text-ink outline-none transition-colors placeholder:text-muted/70 focus:border-ink/40";
+  "w-full max-w-full rounded-[9px] border border-border bg-surface px-3.5 py-3 text-base text-ink outline-none transition-colors placeholder:text-muted/70 focus:border-ink/40 sm:px-4 sm:text-sm";
 
 export function ContactForm() {
   const [values, setValues] = useState<FormState>(initial);
@@ -73,7 +73,7 @@ export function ContactForm() {
     <form
       onSubmit={onSubmit}
       noValidate
-      className="border border-border bg-surface p-6 md:p-8"
+      className="border border-border bg-surface p-4 sm:p-6 md:p-8"
     >
       <div className="grid gap-5">
         <div>

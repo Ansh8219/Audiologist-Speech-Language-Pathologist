@@ -23,12 +23,12 @@ export function ServiceCard({
     <Link
       href={href}
       className={cn(
-        "group relative flex h-full flex-col overflow-hidden border border-border/90 bg-surface p-6",
+        "group relative flex h-full flex-col overflow-hidden border border-border/90 bg-surface p-5",
         "shadow-[0_1px_0_rgba(23,40,42,0.03)]",
         "transition-[transform,border-color,box-shadow] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)]",
-        "hover:-translate-y-1 hover:border-ink/30 hover:shadow-[0_18px_40px_rgba(23,40,42,0.06)]",
+        "hover:border-ink/30 hover:shadow-[0_18px_40px_rgba(23,40,42,0.06)]",
+        "md:p-7 md:hover:-translate-y-1",
         featured && "md:p-8 lg:row-span-2",
-        "md:p-7",
         className,
       )}
     >
