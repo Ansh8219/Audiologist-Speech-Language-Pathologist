@@ -7,7 +7,7 @@ import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
   title: "Contact",
-  description: `Contact ${SITE.name} for speech, swallowing, and voice rehabilitation inquiries in Chandigarh, Mohali, and the Tricity.`,
+  description: `Contact ${SITE.name} for hearing, speech, swallowing, and voice rehabilitation in Chandigarh, Mohali, and the Tricity. RCI licensed.`,
   path: "/contact",
 });
 
@@ -46,7 +46,10 @@ export default function ContactPage() {
               </p>
               <p className="mt-2 text-sm text-ink-soft">{SITE.title}</p>
               <p className="mt-1 text-sm text-muted">{SITE.specialty}</p>
-              <p className="mt-6 text-sm text-ink-soft">{SITE.serviceArea}</p>
+              <p className="mt-4 inline-flex items-center gap-2 border border-border bg-surface px-3 py-1.5 text-[0.68rem] font-semibold tracking-[0.12em] text-ink uppercase">
+                RCI Licensed
+              </p>
+              <p className="mt-4 text-sm text-ink-soft">{SITE.serviceArea}</p>
 
               <dl className="mt-10 space-y-6 border-t border-border pt-8">
                 <div>

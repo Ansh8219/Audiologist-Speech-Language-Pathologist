@@ -3,11 +3,11 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTASection } from "@/components/CTASection";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 import { PageHero } from "@/components/PageHero";
-import { DYSPHAGIA_SIGNS } from "@/lib/constants";
+import { DYSPHAGIA_CONDITIONS, DYSPHAGIA_SIGNS } from "@/lib/constants";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
-  title: "Dysphagia & Swallowing Therapy",
+  title: "Dysphagia / Swallowing Therapy",
   description:
     "Dysphagia therapy and swallowing assessment in Chandigarh and Mohali. Specialist care for coughing with meals, food sticking, and post-stroke swallowing difficulties.",
   path: "/services/dysphagia",
@@ -18,7 +18,7 @@ export default function DysphagiaPage() {
     <>
       <PageHero
         eyebrow="Featured Specialty"
-        title="Dysphagia & Swallowing Therapy"
+        title="Dysphagia / Swallowing Therapy"
         description="Difficulty swallowing can affect nutrition, hydration, safety and quality of life. Specialist assessment clarifies risk and guides practical rehabilitation."
         primaryCta={{
           href: "/book-appointment",
@@ -54,6 +54,20 @@ export default function DysphagiaPage() {
                   tailored to neurological or medical context.
                 </p>
               </div>
+
+              <h3 className="mt-10 text-lg font-semibold text-ink">
+                Conditions We Commonly Manage
+              </h3>
+              <ul className="mt-5 flex flex-wrap gap-2">
+                {DYSPHAGIA_CONDITIONS.map((condition) => (
+                  <li
+                    key={condition}
+                    className="border border-border bg-surface px-3 py-1.5 text-sm text-ink-soft"
+                  >
+                    {condition}
+                  </li>
+                ))}
+              </ul>
 
               <h3 className="mt-10 text-lg font-semibold text-ink">
                 Signs that may warrant assessment

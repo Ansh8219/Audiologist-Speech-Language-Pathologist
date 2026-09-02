@@ -8,9 +8,9 @@ import { NEURO_FOCUS } from "@/lib/constants";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
-  title: "Neuro Speech Rehabilitation",
+  title: "Speech & Language Therapy",
   description:
-    "Neuro speech therapy in Chandigarh for aphasia, dysarthria, speech intelligibility, and cognitive-communication after stroke or neurological change.",
+    "Speech and language therapy in Chandigarh for aphasia, dysarthria, speech intelligibility, and cognitive-communication after stroke or neurological change.",
   path: "/services/neuro-speech",
 });
 
@@ -18,9 +18,9 @@ export default function NeuroSpeechPage() {
   return (
     <>
       <PageHero
-        eyebrow="Neuro Speech"
-        title="Rebuilding Communication After Neurological Changes"
-        description="Specialist rehabilitation for aphasia, dysarthria, and cognitive-communication — oriented toward functional conversation and daily independence."
+        eyebrow="Speech & Language"
+        title="Speech & Language Therapy"
+        description="Assessment and rehabilitation for speech, language and communication difficulties — with specialized focus on neurogenic conditions and functional everyday communication."
         primaryCta={{ href: "/book-appointment", label: "Book an Appointment" }}
         secondaryCta={{ href: "/for-doctors", label: "Refer a Patient" }}
       />
@@ -31,27 +31,27 @@ export default function NeuroSpeechPage() {
             items={[
               { label: "Home", href: "/" },
               { label: "Services", href: "/services" },
-              { label: "Neuro Speech" },
+              { label: "Speech & Language" },
             ]}
           />
 
           <div className="grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-5">
               <h2 className="text-2xl font-semibold tracking-[-0.02em] text-ink md:text-3xl">
-                Aphasia and dysarthria, emphasized
+                Neurogenic communication, emphasized
               </h2>
               <p className="mt-5 text-base leading-relaxed text-ink-soft">
-                After stroke or neurological illness, communication may change
-                in different ways — language access, speech clarity, or the
-                cognitive skills that support conversation. Therapy focuses on
-                what matters most in everyday life.
+                After stroke, TBI, or neurological illness, communication may
+                change in different ways — language access, speech clarity, or
+                the cognitive skills that support conversation. Therapy focuses
+                on what matters most in everyday life.
               </p>
               <ImagePlaceholder
                 className="mt-8"
                 variant="editorial"
                 src="/Neuro.jpg"
                 alt="Focused neuro rehabilitation and recovery work"
-                label="Neuro Speech"
+                label="Speech & Language"
                 sublabel="Adult Rehabilitation"
                 objectPosition="center 22%"
               />
@@ -81,7 +81,7 @@ export default function NeuroSpeechPage() {
                 className="mt-8"
                 showArrow
               >
-                Explore Neuro Speech Rehabilitation
+                Explore speech & language therapy
               </Button>
             </div>
           </div>

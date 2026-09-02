@@ -59,6 +59,8 @@ export function ImagePlaceholder({
           alt={alt || label || ""}
           fill
           priority={priority}
+          loading={priority ? "eager" : "lazy"}
+          fetchPriority={priority ? "high" : "auto"}
           sizes="(max-width: 768px) 100vw, 42vw"
           className="object-cover"
           style={{ objectPosition }}

@@ -37,11 +37,12 @@ const principles = [
 ];
 
 const focusAreas = [
+  "Hearing assessment & audiology",
   "Dysphagia & swallowing rehabilitation",
-  "Neurogenic speech and language disorders",
-  "Aphasia and dysarthria therapy",
-  "Cognitive-communication support",
+  "Speech & language therapy",
+  "Neurogenic communication disorders",
   "Adult voice rehabilitation",
+  "Head & neck rehabilitation",
 ];
 
 export default function AboutPage() {
@@ -50,7 +51,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About"
         title="Meet Dr. Ayush Thakur"
-        description="Audiologist & Speech-Language Pathologist. Neuro Speech & Dysphagia / Swallowing Therapist. Specialized speech, communication and swallowing rehabilitation for adults."
+        description="Audiologist & Speech-Language Pathologist. Specialized speech, swallowing, voice and hearing care for adults — with focus on neuro and head & neck rehabilitation. RCI licensed."
         primaryCta={{ href: "/book-appointment", label: "Book an Appointment" }}
         secondaryCta={{ href: "/contact", label: "Contact" }}
       />
@@ -92,9 +93,8 @@ export default function AboutPage() {
                   hospitals seeking specialist SLP support.
                 </p>
                 <p className="border-l-2 border-champagne-soft pl-4 text-sm text-muted">
-                  Degrees, certifications, hospital affiliations, and years of
-                  experience will be listed here once confirmed. No credentials
-                  have been invented for this site.
+                  RCI licensed. Degrees, certifications, hospital affiliations,
+                  and years of experience will be listed here once confirmed.
                 </p>
               </div>
 

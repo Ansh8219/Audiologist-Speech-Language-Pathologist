@@ -15,9 +15,9 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   ...createMetadata({
-    title: `${SITE.name} | Speech, Swallowing & Neuro Rehabilitation`,
+    title: `${SITE.name} | Speech, Swallowing, Voice & Hearing Care`,
     description:
-      "Specialized speech, communication and swallowing rehabilitation for adults in Chandigarh, Mohali and the Tricity. Dysphagia, neuro speech, aphasia, dysarthria and voice therapy.",
+      "Specialized speech, communication, swallowing and hearing rehabilitation for adults in Chandigarh, Mohali and the Tricity. Dysphagia, neuro speech, aphasia, dysarthria, voice therapy and audiology.",
     path: "/",
   }),
   metadataBase: new URL(SITE.url),
@@ -30,8 +30,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${manrope.variable} h-full antialiased`}>
-      <body className="flex min-h-full flex-col bg-background font-sans text-ink">
+    <html lang="en" className={`${manrope.variable} h-full antialiased`} suppressHydrationWarning>
+      <body
+        className="flex min-h-full flex-col bg-background font-sans text-ink"
+        suppressHydrationWarning
+      >
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-[60] focus:rounded-[9px] focus:bg-ink focus:px-4 focus:py-2 focus:text-white"

@@ -7,7 +7,7 @@ import { VOICE_CONDITIONS } from "@/lib/constants";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
-  title: "Voice Rehabilitation",
+  title: "Voice Therapy",
   description:
     "Voice therapy in Chandigarh and Mohali for vocal nodules, polyps, muscle tension dysphonia, vocal fold paresis, and functional voice disorders.",
   path: "/services/voice",
@@ -18,8 +18,8 @@ export default function VoicePage() {
     <>
       <PageHero
         eyebrow="Voice"
-        title="Voice Rehabilitation"
-        description="A measured approach to vocal recovery — reducing strain, improving efficiency, and supporting sustainable daily voice use."
+        title="Voice Therapy"
+        description="Assessment and therapy for voice disorders and vocal difficulties — reducing strain, improving efficiency, and supporting sustainable daily voice use."
         primaryCta={{ href: "/book-appointment", label: "Book an Appointment" }}
       />
 

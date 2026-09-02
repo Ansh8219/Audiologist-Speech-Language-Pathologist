@@ -1,14 +1,17 @@
 export const SITE = {
   name: "Dr. Ayush Thakur",
   title: "Audiologist & Speech-Language Pathologist",
-  specialty: "Neuro Speech & Dysphagia / Swallowing Therapist",
+  specialty: "Neuro Speech, Dysphagia & Head & Neck Rehabilitation",
   positioning:
-    "Specialized Speech, Communication & Swallowing Rehabilitation for Adults",
+    "Specialized Speech, Swallowing, Voice & Hearing Care",
+  focus:
+    "Specialized neuro and head & neck rehabilitation",
   serviceArea: "Chandigarh • Mohali • Tricity",
   phone: "[PHONE NUMBER]",
   whatsapp: "[WHATSAPP NUMBER]",
   email: "[EMAIL ADDRESS]",
   url: "https://www.drayushthakur.com",
+  rciLicensed: true,
 } as const;
 
 export const NAV_LINKS = [
@@ -18,15 +21,72 @@ export const NAV_LINKS = [
   { href: "/services/dysphagia", label: "Dysphagia" },
   { href: "/services/neuro-speech", label: "Neuro Speech" },
   { href: "/services/voice", label: "Voice" },
+  { href: "/services/audiology", label: "Hearing" },
   { href: "/for-doctors", label: "For Doctors" },
   { href: "/contact", label: "Contact" },
 ] as const;
 
+export const FOOTER_SERVICE_LINKS = [
+  { href: "/about", label: "About" },
+  { href: "/services", label: "Services" },
+  { href: "/services/audiology", label: "Hearing & Audiology" },
+  { href: "/services/dysphagia", label: "Dysphagia" },
+  { href: "/services/neuro-speech", label: "Speech & Language" },
+  { href: "/services/voice", label: "Voice" },
+] as const;
+
+export const FOOTER_CONNECT_LINKS = [
+  { href: "/for-doctors", label: "For Doctors" },
+  { href: "/book-appointment", label: "Book Appointment" },
+  { href: "/contact", label: "Contact" },
+] as const;
+
+export const HOME_SERVICES = [
+  {
+    href: "/services/audiology",
+    title: "Hearing Check-up & Audiology",
+    description:
+      "Comprehensive hearing assessment and audiological evaluation.",
+    featured: false,
+  },
+  {
+    href: "/services/dysphagia",
+    title: "Dysphagia / Swallowing Therapy",
+    description:
+      "Assessment and rehabilitation for swallowing difficulties, including neurological dysphagia.",
+    featured: true,
+  },
+  {
+    href: "/services/neuro-speech",
+    title: "Speech & Language Therapy",
+    description:
+      "Assessment and rehabilitation for speech, language and communication difficulties.",
+    featured: false,
+  },
+  {
+    href: "/services/voice",
+    title: "Voice Therapy",
+    description:
+      "Assessment and therapy for voice disorders and vocal difficulties.",
+    featured: false,
+  },
+] as const;
+
+export const AUDIOLOGY_SERVICES = [
+  "Pure Tone Audiometry",
+  "Speech Audiometry",
+  "Tympanometry",
+  "Hearing evaluation",
+  "Hearing aid counselling / fitting",
+] as const;
+
 export const APPOINTMENT_SERVICES = [
+  "Hearing Check-up & Audiology",
   "Dysphagia & Swallowing",
+  "Speech & Language Therapy",
   "Neuro Speech",
-  "Aphasia / Dysarthria",
   "Voice Rehabilitation",
+  "Aphasia / Dysarthria",
   "Cognitive-Communication",
   "General Consultation",
 ] as const;
@@ -35,7 +95,7 @@ export const FAQ_ITEMS = [
   {
     question: "Who can benefit from speech and swallowing therapy?",
     answer:
-      "Adults experiencing difficulty with speech, language, voice, cognitive-communication, or swallowing — including those recovering from stroke, neurological illness, or progressive conditions — may benefit from specialist assessment and rehabilitation.",
+      "Adults experiencing difficulty with hearing, speech, language, voice, cognitive-communication, or swallowing — including those recovering from stroke, neurological illness, or head & neck conditions — may benefit from specialist assessment and rehabilitation.",
   },
   {
     question: "Do you work with adults after stroke?",
@@ -50,13 +110,13 @@ export const FAQ_ITEMS = [
   {
     question: "When should someone see a speech-language pathologist?",
     answer:
-      "Seek assessment if there is coughing or choking with meals, food feeling stuck, unclear speech, word-finding difficulty, voice changes lasting more than two weeks, or communication challenges after neurological change.",
+      "Seek assessment if there is coughing or choking with meals, food feeling stuck, unclear speech, word-finding difficulty, voice changes lasting more than two weeks, hearing concerns, or communication challenges after neurological change.",
   },
   {
     question:
       "Do you provide therapy for Parkinson's-related speech difficulties?",
     answer:
-      "Yes. Therapy can address reduced volume, clarity, and communication participation associated with Parkinson's and related neurological conditions, tailored to functional daily needs.",
+      "Yes. Therapy can address reduced volume, clarity, swallowing safety, and communication participation associated with Parkinson's and related neurological conditions, tailored to functional daily needs.",
   },
   {
     question: "Can caregivers participate in therapy?",
@@ -81,15 +141,23 @@ export const DYSPHAGIA_SIGNS = [
   "Swallowing difficulties after stroke or neurological illness",
 ] as const;
 
+export const DYSPHAGIA_CONDITIONS = [
+  "Stroke",
+  "Parkinson's Disease",
+  "TBI",
+  "Dementia",
+  "Head & Neck Conditions",
+  "Neurological Disorders",
+] as const;
+
 export const REFERRAL_INDICATIONS = [
   "Post-stroke dysphagia",
-  "Neurological speech disorders",
+  "Parkinson's-related swallowing/speech difficulties",
   "Aphasia",
   "Dysarthria",
-  "Cognitive-communication difficulties",
+  "Neurogenic communication disorders",
   "Voice disorders",
-  "Swallowing safety concerns",
-  "Ongoing rehabilitation needs",
+  "Suspected aspiration/swallowing difficulty",
 ] as const;
 
 export const VOICE_CONDITIONS = [

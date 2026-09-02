@@ -18,7 +18,7 @@ export default function ForDoctorsPage() {
       <PageHero
         eyebrow="Clinical Collaboration"
         title="Physician & Hospital Referrals"
-        description="Collaborative speech, communication and swallowing rehabilitation for patients who may benefit from specialist SLP intervention."
+        description="Collaborative hearing, speech, communication and swallowing rehabilitation for patients who may benefit from specialist intervention. RCI licensed practice."
       />
 
       <section className="section-y">
@@ -45,7 +45,7 @@ export default function ForDoctorsPage() {
           <div className="grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-5">
               <h2 className="text-2xl font-semibold tracking-[-0.02em] text-ink md:text-3xl">
-                Referral Indications
+                When to Refer
               </h2>
               <p className="mt-4 text-base leading-relaxed text-ink-soft">
                 Referrals are welcome for adults requiring specialist assessment

@@ -1,10 +1,6 @@
 import Link from "next/link";
-import { SITE, NAV_LINKS } from "@/lib/constants";
+import { FOOTER_CONNECT_LINKS, FOOTER_SERVICE_LINKS, SITE } from "@/lib/constants";
 import { HoverArrow } from "./HoverArrow";
-
-const footerLinks = NAV_LINKS.filter(
-  (link) => link.href !== "/" && link.href !== "/contact",
-);
 
 function FooterLink({ href, label }: { href: string; label: string }) {
   return (
@@ -35,16 +31,19 @@ export function Footer() {
             <p className="text-xl font-semibold tracking-[-0.02em]">{SITE.name}</p>
             <p className="mt-2 text-sm text-white/65">{SITE.title}</p>
             <p className="mt-1 text-sm text-white/55">{SITE.specialty}</p>
+            <p className="mt-4 inline-flex items-center gap-2 border border-white/15 bg-white/5 px-3 py-1.5 text-[0.7rem] font-semibold tracking-[0.12em] text-champagne uppercase">
+              RCI Licensed
+            </p>
             <p className="mt-6 text-sm text-white/55">{SITE.serviceArea}</p>
           </div>
 
           <div className="grid gap-10 sm:grid-cols-2 lg:col-span-7 lg:grid-cols-3">
             <div>
               <p className="text-[0.6875rem] font-semibold tracking-[0.16em] text-champagne uppercase">
-                Explore
+                Services
               </p>
               <ul className="mt-4 space-y-2.5">
-                {footerLinks.slice(0, 4).map((link) => (
+                {FOOTER_SERVICE_LINKS.map((link) => (
                   <li key={link.href}>
                     <FooterLink href={link.href} label={link.label} />
                   </li>
@@ -56,17 +55,11 @@ export function Footer() {
                 Connect
               </p>
               <ul className="mt-4 space-y-2.5">
-                {footerLinks.slice(4).map((link) => (
+                {FOOTER_CONNECT_LINKS.map((link) => (
                   <li key={link.href}>
                     <FooterLink href={link.href} label={link.label} />
                   </li>
                 ))}
-                <li>
-                  <FooterLink href="/book-appointment" label="Book Appointment" />
-                </li>
-                <li>
-                  <FooterLink href="/contact" label="Contact" />
-                </li>
               </ul>
             </div>
             <div>
@@ -84,8 +77,7 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col gap-3 border-t border-white/10 pt-6 text-sm text-white/45 sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {new Date().getFullYear()} {SITE.name}. Specialized adult
-            rehabilitation.
+            © {new Date().getFullYear()} {SITE.name}. {SITE.focus}.
           </p>
           <p className="text-white/35">{SITE.positioning}</p>
         </div>
