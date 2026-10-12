@@ -2,7 +2,6 @@ import {
   Activity,
   Brain,
   Ear,
-  Droplets,
   MessageSquare,
   Mic2,
 } from "lucide-react";
@@ -11,16 +10,14 @@ import { CTASection } from "@/components/CTASection";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 import { ProcessSteps } from "@/components/ProcessSteps";
-import { Reveal } from "@/components/Reveal";
+import { ScrollReveal, StaggerReveal } from "@/components/ScrollReveal";
 import { SectionHeading } from "@/components/SectionHeading";
-import { ServiceCard } from "@/components/ServiceCard";
 import { ServiceList } from "@/components/ServiceList";
 import {
   AUDIOLOGY_SERVICES,
   DYSPHAGIA_CONDITIONS,
   DYSPHAGIA_SIGNS,
   FAQ_ITEMS,
-  HOME_SERVICES,
   NEURO_FOCUS,
   REFERRAL_INDICATIONS,
   SITE,
@@ -34,13 +31,6 @@ export const metadata = createMetadata({
     "Helping adults communicate better, hear better, swallow safely, and live independently. RCI licensed audiologist and speech-language pathologist in Chandigarh & Mohali.",
   path: "/",
 });
-
-const serviceIcons = {
-  "/services/audiology": <Ear className="size-5" strokeWidth={1.5} />,
-  "/services/dysphagia": <Droplets className="size-5" strokeWidth={1.5} />,
-  "/services/neuro-speech": <MessageSquare className="size-5" strokeWidth={1.5} />,
-  "/services/voice": <Mic2 className="size-5" strokeWidth={1.5} />,
-} as const;
 
 const seekHelp = [
   {
@@ -143,8 +133,6 @@ export default function HomePage() {
                 </Button>
               </div>
               <div className="animate-fade-up-delay-3 trust-line mt-7 sm:mt-8">
-                <span>Adults</span>
-                <span aria-hidden>•</span>
                 <span>Hearing</span>
                 <span aria-hidden>•</span>
                 <span>Speech</span>
@@ -189,44 +177,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SPECIALIZATION */}
-      <section className="section-y">
-        <div className="container-editorial">
-          <Reveal>
-            <SectionHeading
-              eyebrow="Services"
-              title="Specialized Care for Adults"
-              description="Focused pathways for hearing, swallowing, speech, language and voice — designed for clarity, safety, and everyday function."
-            />
-          </Reveal>
-
-          <Reveal className="mt-12">
-            <div className="grid gap-4 sm:grid-cols-2">
-              {HOME_SERVICES.map((service) => (
-                <ServiceCard
-                  key={service.href}
-                  href={service.href}
-                  title={service.title}
-                  description={service.description}
-                  icon={serviceIcons[service.href]}
-                  featured={service.featured}
-                />
-              ))}
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
       {/* AUDIOLOGY */}
       <section className="border-y border-border bg-surface">
         <div className="container-editorial section-y">
-          <Reveal>
+          <ScrollReveal>
             <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
               <div className="lg:col-span-5">
                 <SectionHeading
                   eyebrow="Audiology"
                   title="Audiology & Hearing Services"
                   description="Comprehensive hearing assessment and audiological evaluation — with guidance on rehabilitation and hearing aid support when appropriate."
+                  motion={false}
                 />
                 <Button
                   href="/services/audiology"
@@ -250,14 +211,14 @@ export default function HomePage() {
                 </ul>
               </div>
             </div>
-          </Reveal>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* DYSPHAGIA FLAGSHIP */}
       <section className="bg-surface-soft">
         <div className="container-editorial section-y">
-          <Reveal>
+          <ScrollReveal>
             <div className="grid gap-12 lg:grid-cols-12 lg:gap-10">
               <div className="lg:col-span-7">
                 <p className="eyebrow">Featured Specialty</p>
@@ -330,53 +291,50 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-          </Reveal>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* WHEN TO SEEK HELP */}
       <section className="section-y">
         <div className="container-editorial">
-          <Reveal>
-            <SectionHeading
-              eyebrow="Guidance"
-              title="When to Seek Help"
-              description="These patterns often prompt families and clinicians to request a speech-language pathology assessment."
-            />
-          </Reveal>
-          <Reveal className="mt-12">
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 lg:gap-6">
-              {seekHelp.map((item) => (
-                <article key={item.title} className="border-t border-border pt-6">
-                  <div className="flex items-center justify-between">
-                    <span className="eyebrow">{item.number}</span>
-                    <span className="text-sage" aria-hidden>
-                      {item.icon}
-                    </span>
-                  </div>
-                  <h3 className="mt-5 text-lg font-semibold tracking-[-0.02em] text-ink">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-                    {item.description}
-                  </p>
-                </article>
-              ))}
-            </div>
-          </Reveal>
+          <SectionHeading
+            eyebrow="Guidance"
+            title="When to Seek Help"
+            description="These patterns often prompt families and clinicians to request a speech-language pathology assessment."
+          />
+          <StaggerReveal className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 lg:gap-6" stagger={80}>
+            {seekHelp.map((item) => (
+              <article key={item.title} className="border-t border-border pt-6">
+                <div className="flex items-center justify-between">
+                  <span className="eyebrow">{item.number}</span>
+                  <span className="text-sage" aria-hidden>
+                    {item.icon}
+                  </span>
+                </div>
+                <h3 className="mt-5 text-lg font-semibold tracking-[-0.02em] text-ink">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+                  {item.description}
+                </p>
+              </article>
+            ))}
+          </StaggerReveal>
         </div>
       </section>
 
       {/* NEURO SPEECH */}
       <section className="border-y border-border bg-surface">
         <div className="container-editorial section-y">
-          <Reveal>
+          <ScrollReveal>
             <div className="grid gap-12 lg:grid-cols-12">
               <div className="lg:col-span-5">
                 <SectionHeading
                   eyebrow="Speech & Language"
                   title="Speech & Language Therapy"
                   description="Assessment and rehabilitation for speech, language and communication difficulties — with emphasis on neurogenic conditions and functional everyday communication."
+                  motion={false}
                 />
                 <Button
                   href="/services/neuro-speech"
@@ -406,14 +364,14 @@ export default function HomePage() {
                 />
               </div>
             </div>
-          </Reveal>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* VOICE */}
       <section className="section-y">
         <div className="container-editorial">
-          <Reveal>
+          <ScrollReveal>
             <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
               <div className="lg:col-span-5">
                 <p className="eyebrow">Voice</p>
@@ -456,14 +414,14 @@ export default function HomePage() {
                 </Button>
               </div>
             </div>
-          </Reveal>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* ABOUT */}
       <section className="bg-surface-soft">
         <div className="container-editorial section-y">
-          <Reveal>
+          <ScrollReveal>
             <div className="grid items-center gap-12 lg:grid-cols-12">
               <div className="lg:col-span-5">
                 <ImagePlaceholder
@@ -480,6 +438,7 @@ export default function HomePage() {
                   eyebrow="About"
                   title="Meet Dr. Ayush Thakur"
                   description={`${SITE.title}. ${SITE.positioning} with ${SITE.focus.toLowerCase()}. RCI licensed practice serving ${SITE.serviceArea}.`}
+                  motion={false}
                 />
                 <div className="mt-8 space-y-4 text-[0.95rem] leading-relaxed text-ink-soft">
                   <p>
@@ -500,14 +459,14 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-          </Reveal>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* FOR DOCTORS */}
       <section className="section-y">
         <div className="container-editorial">
-          <Reveal>
+          <ScrollReveal>
             <div className="grid gap-10 border border-border bg-surface p-8 md:p-10 lg:grid-cols-12 lg:p-12">
               <div className="lg:col-span-7">
                 <p className="eyebrow">For Doctors</p>
@@ -540,20 +499,21 @@ export default function HomePage() {
                 </Button>
               </div>
             </div>
-          </Reveal>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* HOW IT WORKS */}
       <section className="border-t border-border bg-surface">
         <div className="container-editorial section-y">
-          <Reveal>
+          <ScrollReveal>
             <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
               <div className="lg:col-span-7">
                 <SectionHeading
                   eyebrow="Process"
                   title="How It Works"
                   description="A clear, reassuring path from first contact to ongoing rehabilitation."
+                  motion={false}
                 />
               </div>
               <div className="lg:col-span-5">
@@ -568,37 +528,38 @@ export default function HomePage() {
                 />
               </div>
             </div>
-          </Reveal>
-          <Reveal className="mt-12">
+          </ScrollReveal>
+          <ScrollReveal className="mt-12">
             <ProcessSteps steps={process} />
-          </Reveal>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* FAQ */}
       <section className="section-y">
         <div className="container-editorial">
-          <Reveal>
+          <ScrollReveal>
             <div className="grid gap-10 lg:grid-cols-12">
               <div className="lg:col-span-4">
                 <SectionHeading
                   eyebrow="FAQ"
                   title="Common Questions"
                   description="Clear answers for patients, caregivers, and referring partners."
+                  motion={false}
                 />
               </div>
               <div className="lg:col-span-8">
                 <FAQAccordion items={FAQ_ITEMS} />
               </div>
             </div>
-          </Reveal>
+          </ScrollReveal>
         </div>
       </section>
 
       <CTASection
         eyebrow="Next Step"
-        title="Ready to take the next step toward clearer communication and safer swallowing?"
-        description="Request an appointment for yourself, a family member, or refer a patient for specialist SLP care."
+        title="Ready to take the next step toward clearer communication, hearing, and safer swallowing?"
+        description="Request an appointment for yourself, a family member, or refer a patient for specialist ASLP (Audiologist & Speech Language Pathologist) care."
         primaryCta={{ href: "/book-appointment", label: "Book an Appointment" }}
         secondaryCta={{ href: "/for-doctors", label: "Refer a Patient" }}
       />

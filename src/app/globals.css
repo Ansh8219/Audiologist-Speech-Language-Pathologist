@@ -272,11 +272,143 @@
     transform: translateY(0);
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    .reveal {
+  /* ── Premium scroll motion (view-timeline) ── */
+  @keyframes scroll-fade-up {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 36px, 0);
+    }
+    to {
       opacity: 1;
-      transform: none;
-      transition: none;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes scroll-fade-down {
+    from {
+      opacity: 0;
+      transform: translate3d(0, -28px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes scroll-fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes scroll-text-up {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 42px, 0);
+      filter: blur(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      filter: blur(0);
+    }
+  }
+
+  @keyframes scroll-image-reveal {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 24px, 0) scale(1.05);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+  }
+
+  @keyframes scroll-parallax-shift {
+    from {
+      transform: translate3d(0, calc(-6% * var(--parallax-strength, 1)), 0);
+    }
+    to {
+      transform: translate3d(0, calc(6% * var(--parallax-strength, 1)), 0);
+    }
+  }
+
+  @supports (animation-timeline: view()) {
+    .scroll-motion-up {
+      animation: scroll-fade-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 38%;
+      animation-delay: var(--motion-delay, 0ms);
+    }
+
+    .scroll-motion-down {
+      animation: scroll-fade-down linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 38%;
+      animation-delay: var(--motion-delay, 0ms);
+    }
+
+    .scroll-motion-fade {
+      animation: scroll-fade-in linear both;
+      animation-timeline: view();
+      animation-range: entry 5% cover 40%;
+      animation-delay: var(--motion-delay, 0ms);
+    }
+
+    .scroll-motion-text {
+      animation: scroll-text-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 42%;
+      animation-delay: var(--motion-delay, 0ms);
+    }
+
+    .scroll-motion-image {
+      animation: scroll-image-reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 5% cover 48%;
+      animation-delay: var(--motion-delay, 0ms);
+    }
+
+    .scroll-parallax-layer {
+      animation: scroll-parallax-shift linear both;
+      animation-timeline: view();
+      animation-range: cover 0% cover 100%;
+    }
+  }
+
+  /* JS fallback when view-timeline unsupported */
+  .scroll-motion-fallback {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0);
+    transition:
+      opacity 0.7s var(--ease-out-soft),
+      transform 0.7s var(--ease-out-soft);
+    transition-delay: var(--motion-delay, 0ms);
+  }
+
+  .scroll-motion-fallback.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .scroll-motion-fallback,
+    .scroll-motion-up,
+    .scroll-motion-down,
+    .scroll-motion-fade,
+    .scroll-motion-text,
+    .scroll-motion-image,
+    .scroll-parallax-layer {
+      opacity: 1 !important;
+      transform: none !important;
+      filter: none !important;
+      animation: none !important;
+      transition: none !important;
     }
   }
 

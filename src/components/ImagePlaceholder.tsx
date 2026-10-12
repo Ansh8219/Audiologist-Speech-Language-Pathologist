@@ -1,4 +1,8 @@
+"use client";
+
 import Image from "next/image";
+import { ParallaxLayer } from "./ParallaxLayer";
+import { ScrollReveal } from "./ScrollReveal";
 import { cn } from "@/lib/utils";
 
 type PlaceholderVariant =
@@ -13,11 +17,12 @@ type ImagePlaceholderProps = {
   label?: string;
   sublabel?: string;
   className?: string;
-  /** Path under /public, e.g. "/doctor.jpg" */
   src?: string;
   alt?: string;
   priority?: boolean;
   objectPosition?: string;
+  /** Enable scroll reveal + subtle parallax */
+  motion?: boolean;
 };
 
 const variantStyles: Record<PlaceholderVariant, string> = {
@@ -37,10 +42,11 @@ export function ImagePlaceholder({
   alt,
   priority = false,
   objectPosition = "center",
+  motion = true,
 }: ImagePlaceholderProps) {
   const hasImage = Boolean(src);
 
-  return (
+  const figure = (
     <figure
       className={cn(
         "relative overflow-hidden border border-border/80",
@@ -54,17 +60,31 @@ export function ImagePlaceholder({
       }
     >
       {hasImage ? (
-        <Image
-          src={src!}
-          alt={alt || label || ""}
-          fill
-          priority={priority}
-          loading={priority ? "eager" : "lazy"}
-          fetchPriority={priority ? "high" : "auto"}
-          sizes="(max-width: 768px) 100vw, 42vw"
-          className="object-cover"
-          style={{ objectPosition }}
-        />
+        priority ? (
+          <Image
+            src={src!}
+            alt={alt || label || ""}
+            fill
+            priority
+            loading="eager"
+            fetchPriority="high"
+            sizes="(max-width: 768px) 100vw, 42vw"
+            className="object-cover"
+            style={{ objectPosition }}
+          />
+        ) : (
+          <ParallaxLayer className="absolute inset-0" strength={1}>
+            <Image
+              src={src!}
+              alt={alt || label || ""}
+              fill
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 42vw"
+              className="object-cover"
+              style={{ objectPosition }}
+            />
+          </ParallaxLayer>
+        )
       ) : (
         <svg
           className="pointer-events-none absolute inset-0 h-full w-full opacity-50"
@@ -83,13 +103,7 @@ export function ImagePlaceholder({
             strokeWidth="0.8"
             opacity="0.75"
           />
-          <circle
-            cx="320"
-            cy="90"
-            r="48"
-            stroke="var(--border)"
-            strokeWidth="1"
-          />
+          <circle cx="320" cy="90" r="48" stroke="var(--border)" strokeWidth="1" />
           <circle
             cx="70"
             cy="400"
@@ -108,22 +122,22 @@ export function ImagePlaceholder({
         </svg>
       )}
 
-      <div className="pointer-events-none absolute left-5 top-5 size-4 border-l border-t border-white/50 mix-blend-difference" />
-      <div className="pointer-events-none absolute top-5 right-5 size-4 border-t border-r border-white/50 mix-blend-difference" />
-      <div className="pointer-events-none absolute bottom-5 left-5 size-4 border-b border-l border-white/50 mix-blend-difference" />
-      <div className="pointer-events-none absolute right-5 bottom-5 size-4 border-r border-b border-white/50 mix-blend-difference" />
+      <div className="pointer-events-none absolute left-5 top-5 z-10 size-4 border-l border-t border-white/50 mix-blend-difference" />
+      <div className="pointer-events-none absolute top-5 right-5 z-10 size-4 border-t border-r border-white/50 mix-blend-difference" />
+      <div className="pointer-events-none absolute bottom-5 left-5 z-10 size-4 border-b border-l border-white/50 mix-blend-difference" />
+      <div className="pointer-events-none absolute right-5 bottom-5 z-10 size-4 border-r border-b border-white/50 mix-blend-difference" />
 
       {(label || sublabel) && (
         <>
           <div
             className={cn(
-              "pointer-events-none absolute inset-x-0 bottom-0 h-1/3",
+              "pointer-events-none absolute inset-x-0 bottom-0 z-10 h-1/3",
               hasImage
                 ? "bg-gradient-to-t from-ink/55 via-ink/15 to-transparent"
                 : "bg-gradient-to-t from-[#EBE6DC]/85 to-transparent",
             )}
           />
-          <figcaption className="absolute inset-x-0 bottom-0 p-4 sm:p-6 md:p-8">
+          <figcaption className="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-6 md:p-8">
             <div
               className={cn(
                 "max-w-[16rem] border-t pt-3 sm:pt-4",
@@ -155,5 +169,13 @@ export function ImagePlaceholder({
         </>
       )}
     </figure>
+  );
+
+  if (!motion || priority) return figure;
+
+  return (
+    <ScrollReveal variant="image" className="h-full w-full">
+      {figure}
+    </ScrollReveal>
   );
 }

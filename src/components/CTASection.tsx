@@ -1,4 +1,7 @@
+"use client";
+
 import { Button } from "./Button";
+import { ScrollReveal } from "./ScrollReveal";
 import { cn } from "@/lib/utils";
 
 type CTASectionProps = {
@@ -34,7 +37,8 @@ export function CTASection({
         aria-hidden
       />
       <div className="container-editorial relative">
-        <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
+        <ScrollReveal variant="up">
+          <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7">
             {eyebrow && (
               <p className="mb-4 inline-flex items-center gap-3 text-[0.6875rem] font-semibold tracking-[0.16em] text-champagne uppercase">
@@ -61,7 +65,8 @@ export function CTASection({
               </Button>
             )}
           </div>
-        </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

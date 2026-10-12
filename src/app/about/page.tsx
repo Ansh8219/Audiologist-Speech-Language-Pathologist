@@ -37,12 +37,13 @@ const principles = [
 ];
 
 const focusAreas = [
-  "Hearing assessment & audiology",
+  "Hearing assessment and management",
   "Dysphagia & swallowing rehabilitation",
   "Speech & language therapy",
   "Neurogenic communication disorders",
-  "Adult voice rehabilitation",
+  "Voice rehabilitation",
   "Head & neck rehabilitation",
+  "Neuro rehabilitation",
 ];
 
 export default function AboutPage() {
@@ -90,11 +91,11 @@ export default function AboutPage() {
                 <p>
                   The practice serves patients and families across{" "}
                   {SITE.serviceArea}, and collaborates with physicians and
-                  hospitals seeking specialist SLP support.
+                  hospitals seeking specialist ASLP (Audiologist & Speech
+                  Language Pathologist) support.
                 </p>
                 <p className="border-l-2 border-champagne-soft pl-4 text-sm text-muted">
-                  RCI licensed. Degrees, certifications, hospital affiliations,
-                  and years of experience will be listed here once confirmed.
+                  RCI licensed.
                 </p>
               </div>
 

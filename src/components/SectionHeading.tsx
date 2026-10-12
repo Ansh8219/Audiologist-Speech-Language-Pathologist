@@ -1,3 +1,6 @@
+"use client";
+
+import { ScrollReveal } from "./ScrollReveal";
 import { cn } from "@/lib/utils";
 
 type SectionHeadingProps = {
@@ -8,6 +11,7 @@ type SectionHeadingProps = {
   as?: "h1" | "h2" | "h3";
   className?: string;
   titleClassName?: string;
+  motion?: boolean;
 };
 
 export function SectionHeading({
@@ -18,10 +22,11 @@ export function SectionHeading({
   as = "h2",
   className,
   titleClassName,
+  motion = true,
 }: SectionHeadingProps) {
   const Tag = as;
 
-  return (
+  const content = (
     <div
       className={cn(
         "max-w-3xl",
@@ -50,4 +55,8 @@ export function SectionHeading({
       )}
     </div>
   );
+
+  if (!motion) return content;
+
+  return <ScrollReveal variant="text">{content}</ScrollReveal>;
 }
